@@ -1,0 +1,51 @@
+<html>
+<head>
+ <meta charset = 'UTF-8'/>
+  <title>
+  {% block title %}{% endblock %}
+  </title>
+  <link rel = "stylesheet" href = "/static/css/bootstrap.css">
+  <script src = "/static/js/modernizr.js"></script>
+  <script src = "/static/js/jquery.js"></script>
+  {% block extra_head %}
+  {% endblock %}
+</head>
+
+<body>
+ {% block body %}
+	{% block header %}
+		{% block menu %}
+		{% endblock %}
+	{% endblock %}
+	<div class = "container">
+	{% block content %}
+		<div class = "container-fluid">
+			<div class = "row-fluid">
+				<div class = "span9">
+				{% block article %}
+					{% block article_title %}
+						{% comment %}
+						{% block[section]_menu %}{% block page_menu %}
+						{% endcomment %}
+					{% endblock %}
+					{% block article_content%}{% endblock %}
+				{% endblock %}
+				{% block article_menu %}{% endblock %}
+				{% block comments %}{%endblock%}
+				</div>
+				<div class = "span3">
+					{% block aside %}
+						{% block tags %}{% endblock %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+	{% block footer %}
+		<p> Thanks for visiting my site!</p>
+	{% endblock %}
+ {% endblock %}
+</div>
+ <script src = "/static/bootstrap.min.js"></script>
+</body>
+</html>

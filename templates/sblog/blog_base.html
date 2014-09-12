@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block extra_head %}
+	<style>
+		body{
+			padding-top:60px;
+		}
+	</style>
+{% endblock %}
+{% block header %}
+	{% block menu %}
+	<div class = "navbar navbar-inverse navbar-fixed-top">
+		<div class = "navbar-inner">
+			<div class = "container">
+				<a class = "brand" href = "#">BLOG</a>
+				<ul class = "nav">
+					<li class = "active divider-vertical">
+						<a href = "{% url 'bloglist' %}">home</a>
+					</li>
+					<li>
+						<a href = "#">about</a>
+					</li>
+					<li>
+						<a href = "#">contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+{% endblock %}
+
